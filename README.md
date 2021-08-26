@@ -7,5 +7,5 @@ Libraries for the RSoft Platform Backend
 	- RSoft.Lib.Web
 	- RSoft.Lib.DDD
 	- RSoft.Lib.Data.MongoDb
-	- [RSoft.Lib.Messaging](/docs/rsoft-lib-messaging.md)
+	- [RSoft.Lib.Messaging](rsoft-backend-libs/blob/develop/docs/rsoft-lib-messaging.md)
 	
