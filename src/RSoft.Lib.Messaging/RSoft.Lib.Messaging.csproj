@@ -7,7 +7,7 @@
     <Company>RSoft</Company>
     <Description>Library for message orchestration</Description>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-lib-messaging</RepositoryUrl>
+    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
     <PackageTags>rsoft lib messaging rabbitmq</PackageTags>
     <PackageIcon>rsoft-lib-messaging-icon-32x32.png</PackageIcon>
     <PackageIconUrl />

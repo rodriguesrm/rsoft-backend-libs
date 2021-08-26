@@ -7,7 +7,7 @@
     <Company>RSoft</Company>
     <Description>Common methods, abstractions, models e etc to RSoft applications</Description>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-lib-common</RepositoryUrl>
+    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
     <PackageTags>rsoft lib common</PackageTags>
     <PackageIcon>rsoft-lib-common-icon-32x32.png</PackageIcon>
   </PropertyGroup>

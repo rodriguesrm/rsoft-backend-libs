@@ -10,7 +10,7 @@
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageTags>rsoft lib ddd domain drive design</PackageTags>
     <RepositoryType></RepositoryType>
-    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-lib-ddd</RepositoryUrl>
+    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
     <PackageIcon>rsoft-framework-icon-32x32.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
