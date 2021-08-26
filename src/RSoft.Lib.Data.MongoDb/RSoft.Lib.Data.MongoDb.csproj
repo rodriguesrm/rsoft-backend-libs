@@ -7,7 +7,7 @@
     <Company>RSoft</Company>
     <Description>MongoDb Database connection component library for RSoft pattern</Description>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/rodriguesrm/rsoft.lib.data</RepositoryUrl>
+    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
     <PackageTags>rsoft lib mongodb</PackageTags>
     <PackageIcon>rsoft-lib-data-mongodb-icon-32x32.png</PackageIcon>
     <PackageIconUrl />
