@@ -245,3 +245,6 @@ ModelManifest.xml
 .fake/
 
 # Files project to ignore
+/src/RSoft.Lib.Common/RSoft.Lib.Common.xml
+/src/RSoft.Lib.DDD/RSoft.Lib.DDD.xml
+/src/RSoft.Lib.Web/RSoft.Lib.Web.xml
