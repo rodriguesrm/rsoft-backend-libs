@@ -15,5 +15,5 @@ Libraries for the RSoft Platform Backend
 //TODO: Create documentation
 
 ### **RSoft.Lib.Messaging**
-See more details [here](../blob/develop/docs/rsoft-lib-messaging.md)
+See more details [here](/docs/rsoft-lib-messaging.md)
 	

@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Docs", "00-Docs", "{6A92
 		..\docs\license.txt = ..\docs\license.txt
 		..\README.md = ..\README.md
 		..\docs\release-notes.md = ..\docs\release-notes.md
+		..\docs\rsoft-lib-messaging.md = ..\docs\rsoft-lib-messaging.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Legacy", "00-Legacy", "{8F772756-5563-4717-A647-CA05F6C17BCE}"
