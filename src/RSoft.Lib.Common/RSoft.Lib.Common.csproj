@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Rodrigo Rodrigues</Authors>
     <Company>RSoft</Company>
     <Description>Common methods, abstractions, models e etc to RSoft applications</Description>
