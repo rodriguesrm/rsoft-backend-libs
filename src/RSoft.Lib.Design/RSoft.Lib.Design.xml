@@ -1,0 +1,947 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RSoft.Lib.Design</name>
+    </assembly>
+    <members>
+        <member name="T:RSoft.Lib.Design.Application.Services.AppServiceBase`3">
+            <summary>
+            Application service abstract class base
+            </summary>
+            <typeparam name="TDto">Dto type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="F:RSoft.Lib.Design.Application.Services.AppServiceBase`3._uow">
+            <summary>
+            Unit of work object
+            </summary>
+        </member>
+        <member name="F:RSoft.Lib.Design.Application.Services.AppServiceBase`3._dmn">
+            <summary>
+            Domain service object
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.#ctor(RSoft.Lib.Design.Infra.Data.IUnitOfWork,RSoft.Lib.Design.Domain.Services.IDomainServiceBase{`1,`2})">
+            <summary>
+            Cria uma nova instância do objeto 'AppService'
+            </summary>
+            <param name="uow">Objeto de unidade de trabalho / controle de transações</param>
+            <param name="dmn">Objeto de serviço de domínio</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.ValidateEntity(`1)">
+            <summary>
+            Validate entity
+            </summary>
+            <param name="entity">Entity instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.GetEntityByKeyAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get entity by key
+            </summary>
+            <param name="dto">Dto instance</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.MapToEntity(`0,`1)">
+            <summary>
+            Map dto to entity
+            </summary>
+            <param name="dto">Dto instance</param>
+            <param name="entity">Entity instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.MapToEntity(`0)">
+            <summary>
+            Map dto to entity
+            </summary>
+            <param name="dto">Dto instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.MapToDto(`1)">
+            <summary>
+            Map entity to dto
+            </summary>
+            <param name="entity">Entity instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.AddAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.UpdateAsync(`2,`0,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.GetAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.GetByKeyAsync(`2,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.DeleteAsync(`2,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.Dispose(System.Boolean)">
+            <summary>
+            Release resources
+            </summary>
+            <param name="disposing">Indicate release internal resources</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.Finalize">
+            <summary>
+            Destroy this object instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.AppServiceBase`3.Dispose">
+            <summary>
+            Release resources
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Services.IAppServiceBase`2">
+            <summary>
+            Interface base de Application
+            </summary>
+            <typeparam name="TDto"></typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.IAppServiceBase`2.AddAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Add an entity to the context
+            </summary>
+            <param name="dto">Dto object instance</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.IAppServiceBase`2.UpdateAsync(`1,`0,System.Threading.CancellationToken)">
+            <summary>
+            Update entity in context
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+            <param name="dto">Instância do dto</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.IAppServiceBase`2.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get all rows
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.IAppServiceBase`2.GetByKeyAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Get entity registration by array key values
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Services.IAppServiceBase`2.DeleteAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Remove entity from context
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2">
+            <summary>
+            Entity abstract class with id column
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2.CreatedAuthor">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2.ChangedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityAuditBase`2.ChangedAuthor">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityBase`1">
+            <summary>
+            Entity abstract class
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.Validate">
+            <summary>
+            Execute validate
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.Equals(System.Object)">
+            <summary>
+            Compare two objects
+            </summary>
+            <param name="obj">Object to compare</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.op_Equality(RSoft.Lib.Design.Domain.Entities.EntityBase{`0},RSoft.Lib.Design.Domain.Entities.EntityBase{`0})">
+            <summary>
+            Compare two objects
+            </summary>
+            <param name="a">First object to compare</param>
+            <param name="b">Second object to compare</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.op_Inequality(RSoft.Lib.Design.Domain.Entities.EntityBase{`0},RSoft.Lib.Design.Domain.Entities.EntityBase{`0})">
+            <summary>
+            Compare two objects
+            </summary>
+            <param name="a">First object to compare</param>
+            <param name="b">Second object to compare</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.GetHashCode">
+            <summary>
+            Get HashCode 
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.ToString">
+            <summary>
+            Get object string
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityBase`1.GetName">
+            <summary>
+            Get object entity name
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2">
+            <summary>
+            Abstract entity class with id column
+            </summary>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.#ctor(`0)">
+            <summary>
+            Create a new entity instance
+            </summary>
+            <param name="id">Entity id</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.CreatedAuthor">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.ChangedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2.ChangedAuthor">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2">
+            <summary>
+            Abstract entity class with id column
+            </summary>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.#ctor(`0)">
+            <summary>
+            Create a new entity instance
+            </summary>
+            <param name="id">Entity id</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.Id">
+            <summary>
+            Entity id
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.Equals(System.Object)">
+            <summary>
+            Compare two objects
+            </summary>
+            <param name="obj">Object to compare</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2">
+            <summary>
+            Abstract entity class with id and description column
+            </summary>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2.#ctor(`0,System.String)">
+            <summary>
+            Create a new entity instance
+            </summary>
+            <param name="id">Id value</param>
+            <param name="name">Name value</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2.Name">
+            <summary>
+            Entity name value
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3">
+            <summary>
+            Abstract class domain service
+            </summary>
+            <typeparam name="TEntity">Entity tipe</typeparam>
+            <typeparam name="TRepository">Repository type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="F:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3._repository">
+            <summary>
+            Repository object
+            </summary>
+        </member>
+        <member name="F:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3._authenticatedUser">
+            <summary>
+            Authenticated user object
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.#ctor(`2,RSoft.Lib.Common.Contracts.Web.IAuthenticatedUser)">
+            <summary>
+            Create a new domain service instance
+            </summary>
+            <param name="repository">Principal repository</param>
+            <param name="authenticatedUser">Authenticated user</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.PrepareSave(`0,System.Boolean)">
+            <summary>
+            Prepare save
+            </summary>
+            <param name="entity">Entity to save</param>
+            <param name="isUpdate">Flag to indicate update action</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.AddAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.Update(`1,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.GetByKeyAsync(`1,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.GetAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.Delete(`1)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.Dispose(System.Boolean)">
+            <summary>
+            Release resources
+            </summary>
+            <param name="disposing">Flag indicate dispose objects</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.Finalize">
+            <summary>
+            Destroy this object instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Services.DomainServiceBase`3.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Services.IDomainServiceBase`2">
+            <summary>
+            Services domain insterface
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Exceptions.InvalidEntityException">
+            <summary>
+            Exception thrown when the entity to be recorded is not valid for the operation, check the entity's notifications.
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Exceptions.InvalidEntityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the RSoft.Lib.Design.Exceptions.InvalidEntityException class with a specified error message.
+            </summary>
+            <param name="entityName">Entity name</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.ICommonBase`2">
+            <summary>
+            Common methos and properties of domains and repositories
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.ICommonBase`2.AddAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Add entity to context
+            </summary>
+            <param name="entity">Entity instance</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.ICommonBase`2.Update(`1,`0)">
+            <summary>
+            Update entity on context
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+            <param name="entity">Entity instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.ICommonBase`2.GetByKeyAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Get row by key value
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.ICommonBase`2.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Get all entity rows
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.ICommonBase`2.Delete(`1)">
+            <summary>
+            Remove entity of context
+            </summary>
+            <param name="key">The values of the primary key for the entity to be found</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.DbContextBase`1">
+            <summary>
+            Auth database context
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Create a new dbcontext instance
+            </summary>
+            <param name="options">Context options settings</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the context template
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SaveChanges">
+            <summary>
+            Saves all changes made in that context to the database.
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Saves all changes made in that context to the database.
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SetTableConfiguration(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Set tables (entities) configurations
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.ConvertFilterExpression``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Type)">
+            <summary>
+            Convert filter expression to lambda expression
+            </summary>
+            <typeparam name="TInterface">Interface type</typeparam>
+            <param name="filterExpression">Filter expression</param>
+            <param name="entityType">Entity type</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SoftDeletionFilter(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Filters records with logical exclusion
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SetSoftDeletionConfiguration(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configure entity fields that implement ISoftDeletion
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SetActiveConfiguration(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configure entity fields that implement IActive
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SetAuditConfiguration(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configure entity fields that implement IAudit
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.SetIgnoreConfiguration(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Define the items (entities/fields) to be ignored when creating the model
+            </summary>
+            <param name="modelBuilder">Model builder object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.DbContextBase`1.OnBeforeSaving">
+            <summary>
+            Event launched before information in the database persists
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.IAudit`1">
+            <summary>
+            Log audit interface
+            </summary>
+            <typeparam name="TKey">Refence author creation/changed key type</typeparam>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAudit`1.CreatedOn">
+            <summary>
+            Row's create date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAudit`1.ChangedOn">
+            <summary>
+            Row's changed date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAudit`1.CreatedBy">
+            <summary>
+            User's id created row
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAudit`1.ChangedBy">
+            <summary>
+            User's id changed row
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.IAuditNavigation`2">
+            <summary>
+            Audit with navigation properties interface
+            </summary>
+            <typeparam name="TKey">Status key type</typeparam>
+            <typeparam name="TUser">User entity type</typeparam>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAuditNavigation`2.CreatedAuthor">
+            <summary>
+            Created author data
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IAuditNavigation`2.ChangedAuthor">
+            <summary>
+            Changed author data
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.IRepositoryBase`2">
+            <summary>
+            Generic repository interface
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.ISoftDeletion">
+            <summary>
+            Soft deletion interface
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.ISoftDeletion.IsDeleted">
+            <summary>
+            Soft deletion flag
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.IUnitOfWork">
+            <summary>
+            Unit of work interface (transaction)
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.IUnitOfWork.TransactionStarted">
+            <summary>
+            Indicates whether the transaction was initiated
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.IUnitOfWork.SaveChanges">
+            <summary>
+            Saves all changes made in this context to the database
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.IUnitOfWork.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Saves all changes made in this context to the database
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.IUnitOfWork.BeginTransactionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Start a transaction
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.IUnitOfWork.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit transaction
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.IUnitOfWork.RollBackAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit transaction
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.RepositoryBase`3">
+            <summary>
+            Abstract repository base
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TTable">Table type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="F:RSoft.Lib.Design.Infra.Data.RepositoryBase`3._ctx">
+            <summary>
+            Database context object
+            </summary>
+        </member>
+        <member name="F:RSoft.Lib.Design.Infra.Data.RepositoryBase`3._dbSet">
+            <summary>
+            Dbset object
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Create a new repository instance
+            </summary>
+            <param name="ctx">Data base context object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Map(`1)">
+            <summary>
+            Map table to entity
+            </summary>
+            <param name="table">Table object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.MapForAdd(`0)">
+            <summary>
+            Map entity to table for add action
+            </summary>
+            <param name="entity">Domain Entity object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.MapForUpdate(`0,`1)">
+            <summary>
+            Map entity to table for update action
+            </summary>
+            <param name="entity">Domain entity object</param>
+            <param name="table">Table entity object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.AddAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Update(`2,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.GetByKeyAsync(`2,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.GetAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Delete(`2)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Dispose(System.Boolean)">
+            <summary>
+            Release resources
+            </summary>
+            <param name="disposing">Flag to indicate to release internal resource</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Finalize">
+            <summary>
+            Destroy object instance and release resources
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryBase`3.Dispose">
+            <summary>
+            Release resources
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2">
+            <summary>
+            Abstract repository base
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="F:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2._ctx">
+            <summary>
+            Database context object
+            </summary>
+        </member>
+        <member name="F:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2._dbSet">
+            <summary>
+            Dbset object
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Create a new repository instance
+            </summary>
+            <param name="ctx">Data base context object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.IsKeyOk(`1,`0)">
+            <summary>
+            Checks if the entity has the same key that was informed (double check)
+            </summary>
+            <param name="key">Verification key value</param>
+            <param name="entity">Instance of key</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.AddAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.Update(`1,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.GetByKeyAsync(`1,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.GetAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.Delete(`1)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.Dispose(System.Boolean)">
+            <summary>
+            Release resources
+            </summary>
+            <param name="disposing">Flag to indicate to release internal resource</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.Finalize">
+            <summary>
+            Destroy object instance and release resources
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.RepositoryProviderBase`2.Dispose">
+            <summary>
+            Release resources
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.ITable">
+            <summary>
+            Table entity interface
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.ITable.GetName">
+            <summary>
+            Get table entity name
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2">
+            <summary>
+            Table entity abstract class with id column
+            </summary>
+            <typeparam name="TTable">Table entity type</typeparam>
+            <typeparam name="TKey">Table entity key</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2.#ctor">
+            <summary>
+            Create a new table instance
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2.CreatedOn">
+            <summary>
+            Log creation date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2.RSoft#Lib#Design#Infra#Data#IAudit{TKey}#CreatedBy">
+            <summary>
+            Log creation user id
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2.ChangedOn">
+            <summary>
+            Log change date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableAuditBase`2.RSoft#Lib#Design#Infra#Data#IAudit{TKey}#ChangedBy">
+            <summary>
+            Log change user id
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableBase`1">
+            <summary>
+            Entity table abstract class
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableBase`1.GetName">
+            <summary>
+            Get object entity name
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2">
+            <summary>
+            Abstract table entity class with id column
+            </summary>
+            <typeparam name="TKey">Table entity key type</typeparam>
+            <typeparam name="TTable">Table entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.#ctor">
+            <summary>
+            Create a new table entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.#ctor(`0)">
+            <summary>
+            Create a new table entity instance
+            </summary>
+            <param name="id">Entity id</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.CreatedOn">
+            <summary>
+            Log creation date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.CreatedBy">
+            <summary>
+            Log creation user id
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.ChangedOn">
+            <summary>
+            Log change date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2.ChangedBy">
+            <summary>
+            Log change user id
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2">
+            <summary>
+            Abstract table entity class with id column
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2.#ctor">
+            <summary>
+            Create a new table entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2.#ctor(`0)">
+            <summary>
+            Create a new table entity instance
+            </summary>
+            <param name="id">Table entity id value</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2.Id">
+            <summary>
+            Table entity id
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2">
+            <summary>
+            Abstract table entity class with id and description column
+            </summary>
+            <typeparam name="TKey">Table entity key type</typeparam>
+            <typeparam name="TTable">Table entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2.#ctor">
+            <summary>
+            Create a new table entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2.#ctor(`0,System.String)">
+            <summary>
+            Create a new table entity instance
+            </summary>
+            <param name="id">Id value</param>
+            <param name="name">Name value</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2.Name">
+            <summary>
+            Table name value
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase">
+            <summary>
+            Unit of work object to maintain the integrity of transactional operations
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Create a new UnitOfWork instance
+            </summary>
+            <param name="ctx">Database context object</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.TransactionStarted">
+            <summary>
+            Flag to indicate whether the transaction was started
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.SaveChanges">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.SaveChangesAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.BeginTransactionAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.CommitAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.RollBackAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.Dispose(System.Boolean)">
+            <summary>
+            Release resources
+            </summary>
+            <param name="disposing">Flag to indicate release interna resources</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.Finalize">
+            <summary>
+            Destroy object instance and release resources
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.UnitOfWorkBase.Dispose">
+            <summary>
+            Release resources
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.IoC.DependencyInjection">
+            <summary>
+            Dependency injection register
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.IoC.DependencyInjection.AddRSoftRegister``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register dependency injection services
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="configuration">Configuration object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.IoC.DependencyInjection.AddRSoftRegister``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            Register dependency injection services
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="configuration">Configuration object</param>
+            <param name="connectionStringName">Connectino string name</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.IoC.DependencyInjection.AddRSoftRegister``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Boolean)">
+            <summary>
+            Register dependency injection services
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="configuration">Configuration object</param>
+            <param name="userLazyLoading">Flag indicate use lazy loading proxy</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.IoC.DependencyInjection.AddRSoftRegister``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Boolean)">
+            <summary>
+            Register dependency injection services
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="configuration">Configuration object</param>
+            <param name="connectionStringName">Connectino string name</param>
+            <param name="useLayzLoadingProxy">Flag indicate use lazy loading proxy</param>
+        </member>
+    </members>
+</doc>

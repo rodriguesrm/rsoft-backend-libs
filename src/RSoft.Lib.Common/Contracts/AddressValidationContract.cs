@@ -48,7 +48,7 @@ namespace RSoft.Lib.Common.Contracts
                     .HasLen(address.State ?? string.Empty, 2, nameof(IAddress.State), ServiceActivator.GetStringInLocalizer<AddressValidationContract>("STATE_SIZE", "State must contain exactly 2 positions"))
 
                     .IsNotNullOrEmpty(address.ZipCode, nameof(IAddress.ZipCode), ServiceActivator.GetStringInLocalizer<AddressValidationContract>("ZIP_CODE_REQUIRED", "Zip code is required"))
-                    .HasLen(address.ZipCode, 8, nameof(IAddress.ZipCode), ServiceActivator.GetStringInLocalizer<AddressValidationContract>("ZIP_COD_SIZE", "The zip code must contain exactly 8 positions"))
+                    .HasLen(address.ZipCode ?? string.Empty, 8, nameof(IAddress.ZipCode), ServiceActivator.GetStringInLocalizer<AddressValidationContract>("ZIP_COD_SIZE", "The zip code must contain exactly 8 positions"))
                     .Matchs(address.ZipCode, "[0-9]{8}", nameof(IAddress.ZipCode), ServiceActivator.GetStringInLocalizer<AddressValidationContract>("ZIP_CODE_ONLY_NUMBERS", "Zip code is in an invalid format (enter numbers only)"));
             }
             else

@@ -8,7 +8,7 @@ Libraries for the RSoft Platform Backend
 ### **RSoft.Lib.Web**
 //TODO: Create documentation
 
-### **RSoft.Lib.DDD**
+### **RSoft.Lib.Design**
 //TODO: Create documentation
 
 ### **RSoft.Lib.Data.MongoDb**
