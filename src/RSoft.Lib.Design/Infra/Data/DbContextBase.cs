@@ -171,7 +171,7 @@ namespace RSoft.Lib.Design.Infra.Data
         {
 
             modelBuilder.Model.GetEntityTypes()
-            .Where(f => typeof(IAudit<TKey>).IsAssignableFrom(f.ClrType))
+            .Where(f => typeof(IAudit<TKey>).IsAssignableFrom(f.ClrType) || typeof(ICreatedAuthor<TKey>).IsAssignableFrom(f.ClrType))
             .ToList()
             .ForEach(e =>
             {
@@ -180,30 +180,35 @@ namespace RSoft.Lib.Design.Infra.Data
                     .IsRequired();
 
                 modelBuilder.Entity(e.ClrType)
-                    .Property<DateTime?>(changedOn);
-
-                modelBuilder.Entity(e.ClrType)
                     .Property<TKey>(createdBy)
                     .IsRequired();
-
-                modelBuilder.Entity(e.ClrType)
-                    .Property<TKey?>(changedBy);
 
                 modelBuilder.Entity(e.ClrType)
                     .HasIndex(createdOn)
                     .HasDatabaseName($"IX_{e.ShortName()}_{createdOn}");
 
                 modelBuilder.Entity(e.ClrType)
-                    .HasIndex(changedOn)
-                    .HasDatabaseName($"IX_{e.ShortName()}_{changedOn}");
-
-                modelBuilder.Entity(e.ClrType)
                     .HasIndex(createdBy)
                     .HasDatabaseName($"IX_{e.ShortName()}_{createdBy}");
 
-                modelBuilder.Entity(e.ClrType)
-                    .HasIndex(changedBy)
-                    .HasDatabaseName($"IX_{e.ShortName()}_{changedBy}");
+                if (typeof(IAudit<TKey>).IsAssignableFrom(e.ClrType))
+                {
+
+                    modelBuilder.Entity(e.ClrType)
+                        .Property<TKey?>(changedBy);
+
+                    modelBuilder.Entity(e.ClrType)
+                        .Property<DateTime?>(changedOn);
+
+                    modelBuilder.Entity(e.ClrType)
+                        .HasIndex(changedOn)
+                        .HasDatabaseName($"IX_{e.ShortName()}_{changedOn}");
+
+                    modelBuilder.Entity(e.ClrType)
+                        .HasIndex(changedBy)
+                        .HasDatabaseName($"IX_{e.ShortName()}_{changedBy}");
+
+                }
 
             });
         }

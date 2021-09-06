@@ -209,6 +209,24 @@
             Get object entity name
             </summary>
         </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityCreatedAuthorBase`2">
+            <summary>
+            Entity abstract class
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TKey">Entity key type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityCreatedAuthorBase`2.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityCreatedAuthorBase`2.CreatedAuthor">
+            <inheritdoc/>
+        </member>
         <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdAuditBase`2">
             <summary>
             Abstract entity class with id column
@@ -274,6 +292,30 @@
         <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdBase`2.ToString">
             <inheritdoc/>
         </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdCreatedAuthorBase`2">
+            <summary>
+            Abstract entity class with id column
+            </summary>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdCreatedAuthorBase`2.#ctor(`0)">
+            <summary>
+            Create a new entity instance
+            </summary>
+            <param name="id">Entity id</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdCreatedAuthorBase`2.CreatedOn">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdCreatedAuthorBase`2.CreatedAuthor">
+            <inheritdoc/>
+        </member>
         <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2">
             <summary>
             Abstract entity class with id and description column
@@ -294,6 +336,30 @@
             <param name="name">Name value</param>
         </member>
         <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdNameAuditBase`2.Name">
+            <summary>
+            Entity name value
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Domain.Entities.EntityIdNameCreatedAuthorBase`2">
+            <summary>
+            Abstract entity class with id and description column
+            </summary>
+            <typeparam name="TKey">Entity key type</typeparam>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdNameCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Domain.Entities.EntityIdNameCreatedAuthorBase`2.#ctor(`0,System.String)">
+            <summary>
+            Create a new entity instance
+            </summary>
+            <param name="id">Id value</param>
+            <param name="name">Name value</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Domain.Entities.EntityIdNameCreatedAuthorBase`2.Name">
             <summary>
             Entity name value
             </summary>
@@ -530,6 +596,22 @@
         <member name="P:RSoft.Lib.Design.Infra.Data.IAuditNavigation`2.ChangedAuthor">
             <summary>
             Changed author data
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.ICreatedAuthor`1">
+            <summary>
+            Created author interface
+            </summary>
+            <typeparam name="TKey">Refence author creation/changed key type</typeparam>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.ICreatedAuthor`1.CreatedOn">
+            <summary>
+            Row's create date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.ICreatedAuthor`1.CreatedBy">
+            <summary>
+            User's id created row
             </summary>
         </member>
         <member name="T:RSoft.Lib.Design.Infra.Data.IRepositoryBase`2">
@@ -773,6 +855,28 @@
             Get object entity name
             </summary>
         </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableCreatedAuthorBase`2">
+            <summary>
+            Table entity abstract class with id column
+            </summary>
+            <typeparam name="TTable">Table entity type</typeparam>
+            <typeparam name="TKey">Table entity key</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new table instance
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableCreatedAuthorBase`2.CreatedOn">
+            <summary>
+            Log creation date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableCreatedAuthorBase`2.RSoft#Lib#Design#Infra#Data#ICreatedAuthor{TKey}#CreatedBy">
+            <summary>
+            Log creation user id
+            </summary>
+        </member>
         <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdAuditBase`2">
             <summary>
             Abstract table entity class with id column
@@ -835,6 +939,34 @@
         <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdBase`2.ToString">
             <inheritdoc/>
         </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdCreatedAuthorBase`2">
+            <summary>
+            Abstract table entity class with id column
+            </summary>
+            <typeparam name="TKey">Table entity key type</typeparam>
+            <typeparam name="TTable">Table entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new table entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdCreatedAuthorBase`2.#ctor(`0)">
+            <summary>
+            Create a new table entity instance
+            </summary>
+            <param name="id">Entity id</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdCreatedAuthorBase`2.CreatedOn">
+            <summary>
+            Log creation date
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdCreatedAuthorBase`2.CreatedBy">
+            <summary>
+            Log creation user id
+            </summary>
+        </member>
         <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2">
             <summary>
             Abstract table entity class with id and description column
@@ -855,6 +987,30 @@
             <param name="name">Name value</param>
         </member>
         <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameAuditBase`2.Name">
+            <summary>
+            Table name value
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameCreatedAuthorBase`2">
+            <summary>
+            Abstract table entity class with id and description column
+            </summary>
+            <typeparam name="TKey">Table entity key type</typeparam>
+            <typeparam name="TTable">Table entity type</typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameCreatedAuthorBase`2.#ctor">
+            <summary>
+            Create a new table entity instance
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameCreatedAuthorBase`2.#ctor(`0,System.String)">
+            <summary>
+            Create a new table entity instance
+            </summary>
+            <param name="id">Id value</param>
+            <param name="name">Name value</param>
+        </member>
+        <member name="P:RSoft.Lib.Design.Infra.Data.Tables.TableIdNameCreatedAuthorBase`2.Name">
             <summary>
             Table name value
             </summary>
