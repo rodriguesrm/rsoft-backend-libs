@@ -4,6 +4,173 @@
         <name>RSoft.Lib.Design</name>
     </assembly>
     <members>
+        <member name="T:RSoft.Lib.Design.Application.Commands.CommandResult`1">
+            <summary>
+            Command result base contract
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Application.Commands.CommandResult`1.Success">
+            <summary>
+            Success status operation flag
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Application.Commands.CommandResult`1.HasError">
+            <summary>
+            Error status flag
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Application.Commands.CommandResult`1.Response">
+            <summary>
+            Response data object
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Design.Application.Commands.CommandResult`1.Errors">
+            <summary>
+            Errors dictionary
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Handlers.CreateCommandHandlerBase`3">
+            <summary>
+            Create entity command abstract 
+            </summary>
+            <typeparam name="TCreateCommand"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.CreateCommandHandlerBase`3.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Create a command handler instance
+            </summary>
+            <param name="logger">Logger object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.CreateCommandHandlerBase`3.PrepareEntity(`0)">
+            <summary>
+            Prepare entity to create mapping data
+            </summary>
+            <param name="request">Rquest command data</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.CreateCommandHandlerBase`3.SaveAsync(`2,System.Threading.CancellationToken)">
+            <summary>
+            Perform save (create) entity in context
+            </summary>
+            <param name="entity">Entity to save</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.CreateCommandHandlerBase`3.RunHandler(`0,System.Threading.CancellationToken,System.Action{`0,`2})">
+            <summary>
+            Command handler
+            </summary>
+            <param name="request">Request command data</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <param name="additionalValidationsAction">Additional validations to be applied to the entity</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Handlers.GetByKeyCommandHandlerBase`3">
+            <summary>
+            Get entity by id command handler abstract base
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.GetByKeyCommandHandlerBase`3.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Create a new command handler instance
+            </summary>
+            <param name="logger">Logger object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.GetByKeyCommandHandlerBase`3.GetEntityByKeyAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get entity by key
+            </summary>
+            <param name="request">Request command data</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.GetByKeyCommandHandlerBase`3.MapEntity(`2)">
+            <summary>
+            Map entity to result
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.GetByKeyCommandHandlerBase`3.RunHandler(`0,System.Threading.CancellationToken)">
+            <summary>
+            Command handler
+            </summary>
+            <param name="request">Command request data</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Handlers.ListCommandHandlerBase`3">
+            <summary>
+            Lista category command handler
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.ListCommandHandlerBase`3.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Create a new command handler instance
+            </summary>
+            <param name="logger">Logger object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.ListCommandHandlerBase`3.GetAllAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get entity by key
+            </summary>
+            <param name="request">Command request data</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.ListCommandHandlerBase`3.MapEntities(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            Map entity list to result list
+            </summary>
+            <param name="entities">Entity list</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.ListCommandHandlerBase`3.RunHandler(`0,System.Threading.CancellationToken)">
+            <summary>
+            Command hanlder
+            </summary>
+            <param name="request">Command request data</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Handlers.SharedResource">
+            <summary>
+            Shared resource class holder
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3">
+            <summary>
+            Create category command handler
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Create a new handler instance
+            </summary>
+            <param name="logger">Logger object</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3.GetEntityByKeyAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Get entity by key
+            </summary>
+            <param name="request">Request command data</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3.PrepareEntity(`0,`2)">
+            <summary>
+            Prepare entity to create mapping data
+            </summary>
+            <param name="request">Rquest command data</param>
+            <param name="entity">Entity instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3.SaveAsync(`2,System.Threading.CancellationToken)">
+            <summary>
+            Perform save (update) entity in context
+            </summary>
+            <param name="entity">Entity to save</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="M:RSoft.Lib.Design.Application.Handlers.UpdateCommandHandlerBase`3.RunHandler(`0,System.Threading.CancellationToken,System.Action{`0,`2})">
+            <summary>
+            Command handler
+            </summary>
+            <param name="request">Request command data</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <param name="additionalValidationsAction">Additional validations to be applied to the entity</param>
+        </member>
         <member name="T:RSoft.Lib.Design.Application.Services.AppServiceBase`3">
             <summary>
             Application service abstract class base
