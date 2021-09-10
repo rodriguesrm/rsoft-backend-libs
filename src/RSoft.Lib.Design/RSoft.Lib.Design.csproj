@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.4.1</Version>
+    <Version>1.5.0</Version>
     <Authors>Rodrigo Rodrigues</Authors>
     <Company>RSoft</Company>
     <Product>RSoft.Lib.Design</Product>
@@ -18,6 +18,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>RSoft.Lib.Design.xml</DocumentationFile>
     <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>RSoft.Lib.Design.xml</DocumentationFile>
+    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

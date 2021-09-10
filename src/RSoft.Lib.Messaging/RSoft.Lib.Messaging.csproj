@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.0.1</Version>
+    <Version>1.5.0</Version>
     <Authors>Rodrigo Rodrigues</Authors>
     <Company>RSoft</Company>
     <Description>Library for message orchestration</Description>
@@ -15,6 +15,11 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
+    <DocumentationFile>RSoft.Lib.Messaging.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
     <DocumentationFile>RSoft.Lib.Messaging.xml</DocumentationFile>
   </PropertyGroup>
 

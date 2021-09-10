@@ -10,7 +10,7 @@
     <PackageIcon>rsoft-framework-web-icon-32x32.png</PackageIcon>
     <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
     <PackageTags>rsoft lib ddd api web</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.5.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,7 +20,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>RSoft.Lib.Web.xml</DocumentationFile>
-    <OutputPath>bin\Release\netcoreapp3.1\</OutputPath>
+    <OutputPath>bin\Debug\netcoreapp3.1\net5.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
