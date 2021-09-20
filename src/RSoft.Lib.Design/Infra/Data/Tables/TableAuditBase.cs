@@ -32,7 +32,7 @@ namespace RSoft.Lib.Design.Infra.Data.Tables
         /// <summary>
         /// Log creation user id
         /// </summary>
-        TKey IAudit<TKey>.CreatedBy { get; set; }
+        public TKey CreatedBy { get; set; }
 
         /// <summary>
         /// Log change date
@@ -42,7 +42,7 @@ namespace RSoft.Lib.Design.Infra.Data.Tables
         /// <summary>
         /// Log change user id
         /// </summary>
-        TKey? IAudit<TKey>.ChangedBy { get; set; }
+        public TKey? ChangedBy { get; set; }
 
         #endregion
 
