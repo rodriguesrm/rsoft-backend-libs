@@ -150,7 +150,7 @@ public class YourClassName
 **Publish/Raise events**
 
 ```c#
-public class YourCommandConsumer : IConsumeCommand<YourCommand>
+public class YourCommandConsumer : IConsumerCommand<YourCommand>
 {
     public Task Consume(ConsumeContext<YourCommand> context)
     {
@@ -173,13 +173,13 @@ To create the message handlers, the same premise applied when creating the contr
 
 ```c#
 // Command consumer interface
-public interface IConsumeCommand<TMessage> : IConsumer<TMessage>
+public interface IConsumerCommand<TMessage> : IConsumer<TMessage>
   where TMessage : class, IMessageCommand
 {
 }
 
 // Event consumer interface
-public interface IConsumeEvent<TMessage> : IConsumer<TMessage>
+public interface IConsumerEvent<TMessage> : IConsumer<TMessage>
   where TMessage : class, IMessageEvent
 {
 }
@@ -189,7 +189,7 @@ public interface IConsumeEvent<TMessage> : IConsumer<TMessage>
 
 ```c#
 // Command consumer class
-public class PlaceOrderCommandConsumer : IConsumeCommand<PlaceOrderCommand>
+public class PlaceOrderCommandConsumer : IConsumerCommand<PlaceOrderCommand>
 {
 
     public Task Consume(ConsumeContext<PlaceOrderCommand> context)
@@ -200,7 +200,7 @@ public class PlaceOrderCommandConsumer : IConsumeCommand<PlaceOrderCommand>
 }
 
 // Event consumer class
-public class OrderPlacedEventConsumer : IConsumeCommand<OrderPlacedEvent>
+public class OrderPlacedEventConsumer : IConsumerCommand<OrderPlacedEvent>
 {
 
     public Task Consume(ConsumeContext<OrderPlacedEvent> context)
