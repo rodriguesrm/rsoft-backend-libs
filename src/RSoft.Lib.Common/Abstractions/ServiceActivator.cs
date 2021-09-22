@@ -69,6 +69,8 @@ namespace RSoft.Lib.Common.Abstractions
                 return defaultText;
 
             IStringLocalizer<T> localizer = GetScope().ServiceProvider.GetService<IStringLocalizer<T>>();
+            if (localizer == null)
+                return defaultText;
             LocalizedString localizeResult = localizer[textToLocalizer];
 
             if (localizeResult.ResourceNotFound)
