@@ -60,7 +60,7 @@ namespace RSoft.Lib.Design.Application.Handlers
         /// <param name="request">Rquest command data</param>
         /// <param name="entity">Entity instance</param>
         /// <param name="isUpdate">Operation status flag (true=Update/false=Create)</param>
-        protected abstract void PrepareEntity(TCreateOrUpdateCommand request, TEntity entity, bool isUpdate);
+        protected abstract TEntity PrepareEntity(TCreateOrUpdateCommand request, TEntity entity, bool isUpdate);
 
         /// <summary>
         /// Perform save (update) entity in context
@@ -93,7 +93,7 @@ namespace RSoft.Lib.Design.Application.Handlers
             bool isUpdate = entity != null;
             if (entity == null)
                 entity = Activator.CreateInstance<TEntity>();
-            PrepareEntity(request, entity, isUpdate);
+            entity = PrepareEntity(request, entity, isUpdate);
             entity.Validate();
             additionalValidationsAction?.Invoke(request, entity);
             if (entity.Valid)
