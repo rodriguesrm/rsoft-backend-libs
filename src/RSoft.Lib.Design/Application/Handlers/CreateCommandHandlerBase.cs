@@ -11,7 +11,7 @@ namespace RSoft.Lib.Design.Application.Handlers
 {
 
     /// <summary>
-    /// Create entity command abstract 
+    /// Create entity command abstract handler
     /// </summary>
     /// <typeparam name="TCreateCommand"></typeparam>
     /// <typeparam name="TResult"></typeparam>
