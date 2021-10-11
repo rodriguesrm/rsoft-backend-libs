@@ -91,6 +91,8 @@ namespace RSoft.Lib.Design.Application.Handlers
             CommandResult<TResult> result = Activator.CreateInstance<CommandResult<TResult>>();
             TEntity entity = await GetEntityByKeyAsync(request, cancellationToken);
             bool isUpdate = entity != null;
+            if (entity == null)
+                entity = Activator.CreateInstance<TEntity>();
             PrepareEntity(request, entity, isUpdate);
             entity.Validate();
             additionalValidationsAction?.Invoke(request, entity);
