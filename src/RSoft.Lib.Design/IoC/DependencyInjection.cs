@@ -71,7 +71,7 @@ namespace RSoft.Lib.Design.IoC
 
             #region Options
 
-            services.Configure<ScopeOptions>(options => configuration.GetSection("Scope").Bind(options));
+            services.Configure<AppClientOptions>(options => configuration.GetSection("AppClient").Bind(options));
 
             #endregion
 
