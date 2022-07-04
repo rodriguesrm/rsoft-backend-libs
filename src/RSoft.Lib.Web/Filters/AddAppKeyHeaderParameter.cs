@@ -60,20 +60,6 @@ namespace RSoft.Lib.Web.Filters
                 
             });
 
-            operation.Parameters.Add(new OpenApiParameter
-            {
-                Name = "app-access",
-                Description = "Application key access",
-                In = ParameterLocation.Header,
-                Required = false,
-                Schema = new OpenApiSchema
-                {
-                    Type = "String",
-                    Default = !_isProd ? new OpenApiString(_appAccess) : null
-                },
-
-            });
-
             #endregion
 
         }
