@@ -52,20 +52,6 @@ namespace RSoft.Lib.Common.Web.Api
         }
 
         /// <summary>
-        /// Application access key passed in the request header
-        /// </summary>
-        protected Guid? AppAccess
-        {
-            get
-            {
-                var headerInfo = Request?.Headers["app-access"];
-                if (!Guid.TryParse(headerInfo, out Guid result))
-                    return null;
-                return result;
-            }
-        }
-
-        /// <summary>
         /// Accept-Language passed in the request header
         /// </summary>
         protected string AcceptLanguage
