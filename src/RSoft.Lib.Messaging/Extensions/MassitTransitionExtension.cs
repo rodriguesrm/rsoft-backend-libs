@@ -71,7 +71,7 @@ namespace RSoft.Lib.Messaging.Extensions
             queueName ??= typeof(TCommand).Name;
             config.ReceiveEndpoint(queueName, e =>
             {
-                e.Consumer(() => Activator.CreateInstance<TConsumer>()); ;
+                // e.Consumer(() => Activator.CreateInstance<TConsumer>());
             });
 
         }
@@ -79,7 +79,7 @@ namespace RSoft.Lib.Messaging.Extensions
         /// <summary>
         /// Register event consumer endpoint
         /// </summary>
-        /// <typeparam name="TCommand">Event type</typeparam>
+        /// <typeparam name="TEvent">Event type</typeparam>
         /// <typeparam name="TConsumer">Consumer type</typeparam>
         /// <param name="config">RabbitMQ Bus factory configurator</param>
         /// <param name="queueName">Queue name</param>

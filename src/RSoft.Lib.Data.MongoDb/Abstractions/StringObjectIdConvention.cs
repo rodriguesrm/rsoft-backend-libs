@@ -6,7 +6,7 @@ namespace RSoft.Lib.Data.MongoDb.Abstractions
 {
 
     /// <summary>
-    /// Conversions from ObjectId<->String to Application-MongoDb
+    /// Conversions from ObjectId-String to Application-MongoDb
     /// </summary>
     public class StringObjectIdConvention : ConventionBase, IPostProcessingConvention
     {

@@ -14,6 +14,9 @@ namespace RSoft.Lib.Data.MongoDb.Abstractions
 
         #region Local Objects/Variables
 
+        /// <summary>
+        /// Connection string options
+        /// </summary>
         protected MongoDbConnectionStrings _connectionStringOptions;
 
         #endregion

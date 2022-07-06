@@ -1,5 +1,9 @@
 ﻿namespace RSoft.Lib.Messaging.Options
 {
+
+    /// <summary>
+    /// Messaging options model
+    /// </summary>
     public class MessagingOption
     {
 

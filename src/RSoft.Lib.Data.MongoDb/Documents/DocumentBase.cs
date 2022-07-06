@@ -4,6 +4,9 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace RSoft.Lib.Data.MongoDb.Documents
 {
 
+    /// <summary>
+    /// NoSql Document base object
+    /// </summary>
     public class DocumentBase : IDocument
     {
 
