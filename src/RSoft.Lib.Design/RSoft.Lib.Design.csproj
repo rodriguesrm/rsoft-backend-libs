@@ -39,10 +39,10 @@
   <ItemGroup>
     <PackageReference Include="FluentValidator" Version="2.0.4" />
     <PackageReference Include="MediatR" Version="10.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.9" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.17" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.4" />
   </ItemGroup>
 
   <ItemGroup>
