@@ -11,16 +11,8 @@
     <PackageTags>rsoft lib mongodb</PackageTags>
     <PackageIcon>rsoft-lib-data-mongodb-icon-32x32.png</PackageIcon>
     <PackageIconUrl />
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>RSoft.Lib.Data.MongoDb.xml</DocumentationFile>
-    <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
-    <DocumentationFile>RSoft.Lib.Data.MongoDb.xml</DocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
   <ItemGroup>

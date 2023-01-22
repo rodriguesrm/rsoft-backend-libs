@@ -11,16 +11,8 @@
     <PackageTags>rsoft lib contracts</PackageTags>
     <PackageIcon>rsoft-lib-contract-icon-32x32.png</PackageIcon>
     <PackageIconUrl />
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>RSoft.Lib.Contracts.xml</DocumentationFile>
-    <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>RSoft.Lib.Contracts.xml</DocumentationFile>
-    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
   <ItemGroup>
