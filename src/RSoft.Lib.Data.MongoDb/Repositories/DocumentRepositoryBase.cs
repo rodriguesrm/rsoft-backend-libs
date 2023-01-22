@@ -5,13 +5,25 @@ using System.Threading.Tasks;
 
 namespace RSoft.Lib.Data.MongoDb.Repositories
 {
+
+    /// <summary>
+    /// Document respository base class
+    /// </summary>
+    /// <typeparam name="TDocument">Document type</typeparam>
     public abstract class DocumentRepositoryBase<TDocument> : IDocumentRepository<TDocument>
         where TDocument : IDocument
     {
 
         #region Local Objects/Variables
 
+        /// <summary>
+        /// Collection name
+        /// </summary>
         protected readonly string _collectionName;
+        
+        /// <summary>
+        /// MongoDb database object
+        /// </summary>
         protected readonly IMongoDatabase _db;
 
         /// <summary>

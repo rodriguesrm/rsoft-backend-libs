@@ -6,6 +6,10 @@
     /// </summary>
     public class MongoDbConnectionStrings
     {
+
+        /// <summary>
+        /// MongoDb connection string
+        /// </summary>
         public string MongoDb { get; set; }
     }
 

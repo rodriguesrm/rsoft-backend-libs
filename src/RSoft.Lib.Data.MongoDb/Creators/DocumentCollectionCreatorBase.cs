@@ -20,8 +20,19 @@ namespace RSoft.Lib.Data.MongoDb.Creators
 
         #region Local/Objects variables
 
+        /// <summary>
+        /// Collection name
+        /// </summary>
         protected string _collectionName;
+        
+        /// <summary>
+        /// MongoDb Connection object
+        /// </summary>
         protected IMongoCollection<TDocument> _collection;
+        
+        /// <summary>
+        /// MongoDb Database object
+        /// </summary>
         protected IMongoDatabase _mongoDatabase;
 
         /// <summary>
@@ -44,6 +55,7 @@ namespace RSoft.Lib.Data.MongoDb.Creators
         /// Create a new class instance
         /// </summary>
         /// <param name="mongoDatabase">IMongoDatabase object instance</param>
+        /// <param name="collectionName">Collection name</param>
         public DocumentCollectionCreatorBase(IMongoDatabase mongoDatabase, string collectionName)
         {
             _collectionName = collectionName;
@@ -201,6 +213,7 @@ namespace RSoft.Lib.Data.MongoDb.Creators
             }
         }
 
+        /// <summary>
         /// Create index if not exists
         /// </summary>
         /// <param name="field">Field object</param>
