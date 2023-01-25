@@ -15,12 +15,8 @@
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<DocumentationFile>RSoft.Lib.Worker.xml</DocumentationFile>
 	<PackageLicenseFile>license.txt</PackageLicenseFile>
-	<ApplicationIcon>rsoft-lib-worker-32x32.png</ApplicationIcon>
+	  <PackageIcon>rsoft-lib-worker-32x32.png</PackageIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="rsoft-lib-worker-32x32.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Cronos" Version="0.7.1" />
@@ -31,6 +27,10 @@
 
   <ItemGroup>
     <None Update="license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="rsoft-lib-worker-32x32.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
