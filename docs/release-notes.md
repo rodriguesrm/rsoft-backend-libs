@@ -2,7 +2,7 @@
 
 Libraries for the RSoft Platform Backend
 
-### Release Notes version 1.0.0
+### Release Notes version 2.0.0
 	- Group libs:
 
 		- RSoft.Lib.Common
@@ -10,5 +10,6 @@ Libraries for the RSoft Platform Backend
 		- RSoft.Lib.Design
 		- RSoft.Lib.Messaging
 		- RSoft.Lib.Web 
+		- RSoft.Lib.Worker
 		
 	in just one repository

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Rodrigo Rodrigues</Authors>
+    <Company>RSoft</Company>
+    <Description>Lib for worker job</Description>
+    <RepositoryUrl>https://github.com/rodriguesrm/rsoft-backend-libs</RepositoryUrl>
+    <PackageTags>rsoft lib worker log</PackageTags>
+	<Version>2.1.0</Version>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<DocumentationFile>RSoft.Lib.Worker.xml</DocumentationFile>
+	<PackageLicenseFile>license.txt</PackageLicenseFile>
+	<ApplicationIcon>rsoft-lib-worker-32x32.png</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="rsoft-lib-worker-32x32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cronos" Version="0.7.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="license.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RSoft.Lib.Worker</name>
+    </assembly>
+    <members>
+        <member name="T:RSoft.Lib.Worker.Extensions.ScheduledServiceExtensions">
+            <summary>
+            Extension for adding jobs to the container service
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Extensions.ScheduledServiceExtensions.AddCronJob``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{RSoft.Lib.Worker.Schedule.IScheduleConfig{``0}})">
+            <summary>
+            Adds the job to the run container
+            </summary>
+            <typeparam name="TJob">Job type to be performed</typeparam>
+            <param name="services">Container services collection</param>
+            <param name="options">Scheduling options</param>
+        </member>
+        <member name="T:RSoft.Lib.Worker.Jobs.CronJobService`1">
+            <summary>
+            Abstract object of jobs to be executed
+            </summary>
+        </member>
+        <member name="F:RSoft.Lib.Worker.Jobs.CronJobService`1._executionCounter">
+            <summary>
+            Execution counter value
+            </summary>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.#ctor(System.String,System.TimeZoneInfo,Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            Create a new object instance
+            </summary>
+            <param name="cronExpression">Schedule cron expression</param>
+            <param name="timeZoneInfo">Timezone information</param>
+            <param name="logger">Logger object instance</param>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.#ctor(System.String,System.TimeZoneInfo,Microsoft.Extensions.Logging.ILogger{`0},System.Boolean)">
+            <summary>
+            Create a new object instance
+            </summary>
+            <param name="cronExpression">Schedule cron expression</param>
+            <param name="timeZoneInfo">Timezone information</param>
+            <param name="logger">Logger object instance</param>
+            <param name="runImmediately">Indicates that a run should start immediately</param>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.ScheduleJob(System.Threading.CancellationToken)">
+            <summary>
+            Schedules the activity for the next run
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.StartAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.DoWork(System.Threading.CancellationToken)">
+            <summary>
+            Run the scheduled task
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete</param>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.StopAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RSoft.Lib.Worker.Jobs.CronJobService`1.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:RSoft.Lib.Worker.Schedule.IScheduleConfig`1">
+            <summary>
+            Schedule settings interface
+            </summary>
+            <typeparam name="TJob">Job Type to be executed</typeparam>
+        </member>
+        <member name="P:RSoft.Lib.Worker.Schedule.IScheduleConfig`1.CronExpression">
+            <summary>
+            Schedule cron expression
+            </summary>
+        </member>
+        <member name="P:RSoft.Lib.Worker.Schedule.IScheduleConfig`1.TimeZoneInfo">
+            <summary>
+            Timezone information
+            </summary>
+        </member>
+        <member name="T:RSoft.Lib.Worker.Schedule.ScheduleConfig`1">
+            <summary>
+            Schedule settings object
+            </summary>
+            <typeparam name="TJob">Job Type to be executed</typeparam>
+        </member>
+        <member name="P:RSoft.Lib.Worker.Schedule.ScheduleConfig`1.CronExpression">
+            <inheritdoc/>
+        </member>
+        <member name="P:RSoft.Lib.Worker.Schedule.ScheduleConfig`1.TimeZoneInfo">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
